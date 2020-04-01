@@ -11,7 +11,9 @@ playing = True
 
 # CLASS DEFINTIONS:
 
-class Card:
+# A Card object really only needs two attributes: suit and rank. 
+# You might add an attribute for "value" we chose to handle value later when developing our Hand class.
+class Card():
     
     def __init__(self,suit,rank):
         self.suit = suit
@@ -20,8 +22,9 @@ class Card:
     def __str__(self):
         return self.rank + ' of ' + self.suit
     
-
-class Deck:
+# Here we might store 52 card objects in a list that can later be shuffled. 
+# First, though, we need to instantiate all 52 unique card objects and add them to our list.
+class Deck():
     
     def __init__(self):
         self.deck = []  # start with an empty list
@@ -39,11 +42,12 @@ class Deck:
         random.shuffle(self.deck)
         
     def deal(self):
-        single_card = self.deck.pop()
-        return single_card
+        return self.deck.pop()
     
-
-class Hand:
+# In addition to holding Card objects dealt from the Deck, 
+# the Hand class may be used to calculate the value of those cards using the values dictionary defined above. 
+# It may also need to adjust for the value of Aces when appropriate.
+class Hand():
     
     def __init__(self):
         self.cards = []  # start with an empty list as we did in the Deck class
@@ -61,8 +65,9 @@ class Hand:
             self.value -= 10
             self.aces -= 1
             
-
-class Chips:
+# In addition to decks of cards and hands, we need to keep track of a Player's starting chips, bets, and ongoing winnings. 
+# Let's make a Chips class!
+class Chips():
     
     def __init__(self):
         self.total = 100
