@@ -1,7 +1,7 @@
 # BlackJackGame-Py3
 
 ###  A simple text-based BlackJack game
-To play a hand of Blackjack the following steps must be followed:</br></br>
+##### To play a hand of Blackjack the following steps must be followed:
 1. Create a deck of 52 cards </br>
 2. Shuffle the deck </br>
 3. Ask the Player for their bet </br>
